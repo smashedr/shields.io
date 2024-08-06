@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  nginx:
+    image: ghcr.io/cssnr/docker-nginx-proxy:latest
+    environment:
+      - SERVICE_NAME=shields
+    ports:
+      - "80:80"
+
+  shields:
+    image: shieldsio/shields:server-2024-07-01

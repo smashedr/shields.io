@@ -1,0 +1,25 @@
+name: "Deploy"
+
+on:
+  repository_dispatch:
+    types:
+      - webhook
+  workflow_dispatch:
+  #release:
+  #  types:
+  #    - published
+
+jobs:
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: "Portainer Deploy"
+        uses: cssnr/portainer-stack-deploy-action@v1
+        with:
+          url: ${{ secrets.PORTAINER_URL }}
+          token: ${{ secrets.PORTAINER_TOKEN }}
+          file: docker-compose-swarm.yaml
+          name: cssnr-shields
