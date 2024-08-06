@@ -37,7 +37,7 @@ services:
       - traefik-public
 
   shields:
-    image: shieldsio/shields:server-2024-07-01
+    image: ghcr.io/smashedr/shields:pr-validation
     deploy:
       replicas: 1
       resources:

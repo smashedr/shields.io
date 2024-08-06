@@ -9,4 +9,4 @@ services:
       - "80:80"
 
   shields:
-    image: shieldsio/shields:server-2024-07-01
+    image: ghcr.io/smashedr/shields:pr-validation
